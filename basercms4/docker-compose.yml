@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  basercms:
+    build: .
+    ports:
+      - 8080:80
+
+  mysql:
+    image: mysql
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+      MYSQL_DATABASE: "basercms"

@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  concrete5:
+    build: .
+    ports:
+      - 8080:80
+    depends_on:
+      - mysql
+
+  mysql:
+    image: mysql
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+      MYSQL_DATABASE: "concrete5"
+

@@ -1,2 +1,4 @@
 *.zip
 *.sw?
+
+/typo3v6/typo3conf/*

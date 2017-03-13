@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  sugarcrm:
+    image: "spantree/sugarcrm"
+    ports:
+      - "8080:80"
+    environment:
+      DB_TYPE: mysql
+      DB_MANAGER: MysqlManager
+
+  mysql:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: sugarcrm
+

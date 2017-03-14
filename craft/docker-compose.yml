@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  craft:
+    build: .
+    ports:
+      - 8080:80
+  
+  mysql:
+    image: mysql:5.6
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+      MYSQL_DATABASE: "craft"
+

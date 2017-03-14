@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  acms:
+    image: atsu666/acms:2.6.0a
+    ports:
+      - 8080:80
+
+  mysql:
+    image: mysql
+    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    environment:
+      MYSQL_ROOT_PASSWORD: "password"
+      MYSQL_DATABASE: "acms"

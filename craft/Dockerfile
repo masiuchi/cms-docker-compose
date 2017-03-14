@@ -1,4 +1,4 @@
-FROM php:5.5-apache
+FROM php:7-apache
 
 RUN apt-get update &&\
  apt-get --no-install-recommends -y install \
@@ -6,12 +6,12 @@ RUN apt-get update &&\
   libjpeg62-turbo-dev \
   libmcrypt-dev \
   libpng12-dev \
-  unzip \
-  wget &&\
+  zlib1g-dev \
+  zip unzip wget &&\
  apt-get clean &&\
  rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/*
 
-RUN docker-php-ext-install gd mbstring mcrypt mysqli pdo_mysql &&\
+RUN docker-php-ext-install gd mbstring mcrypt mysqli pdo_mysql zip &&\
  a2enmod rewrite
 
 COPY apache2.conf /etc/apache2/

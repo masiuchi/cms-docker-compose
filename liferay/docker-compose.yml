@@ -1,0 +1,8 @@
+version: "3"
+
+services:
+  liferay:
+    image: jpenren/alpine-liferay7
+    ports:
+      - 8080:8080
+
